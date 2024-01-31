@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Profile - E-commerce</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #000000;
+      color: #fff;
+    }
+
+    .profile-container {
+      max-width: 800px;
+      margin: 20px auto;
+      background-color: #fff;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      transition: box-shadow 0.3s ease;
+    }
+
+    .profile-container:hover {
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .user-details {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .user-details h2 {
+      margin: 5px 0;
+      color: #333;
+    }
+
+    .user-details p {
+      color: #666;
+    }
+
+    .tabs {
+      margin-bottom: 20px;
+    }
+
+    .tab-button {
+      display: block;
+      width: 100%;
+      background-color: #007bff;
+      color: #fff;
+      padding: 8px 15px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-bottom: 10px;
+      transition: background-color 0.3s ease;
+    }
+
+    .tab-button:hover {
+      background-color: #0056b3;
+    }
+
+    .tab-content {
+      display: none;
+    }
+
+    .active-tab {
+      display: block;
+    }
+
+    .order-history, .wishlist, .address-book, .change-password {
+      margin-bottom: 20px;
+    }
+
+    .order-history h3, .wishlist h3, .address-book h3, .change-password h3 {
+      cursor: pointer;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 5px;
+      margin-bottom: 10px;
+      color: #007bff;
+      transition: color 0.3s ease;
+    }
+
+    .order-history h3:hover, .wishlist h3:hover, .address-book h3:hover, .change-password h3:hover {
+      color: #0056b3;
+    }
+
+    .order-item, .wishlist-item, .address-item {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+
+    .order-item span, .wishlist-item span {
+      color: #555;
+    }
+
+    .settings {
+      text-align: center;
+    }
+
+    .edit-profile-btn {
+      background-color: #007bff;
+      color: #fff;
+      padding: 8px 15px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .edit-profile-btn:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="profile-container">
+    <div class="user-details">
+      <h2>Your Name</h2>
+      <p>Email: your.email@example.com</p>
+      <p>Member Since: January 1, 2022</p>
+    </div>
+
+    <div class="tabs">
+      <button class="tab-button" onclick="openTab('orderHistory')">Order History</button>
+      <div class="tab-content order-history active-tab">
+        <h3 id="orderHistoryToggle">Order History</h3>
+        <div class="order-item">
+          <span>Order #12345</span>
+          <span>$99.99</span>
+        </div>
+        <div class="order-item">
+          <span>Order #67890</span>
+          <span>$49.99</span>
+        </div>
+        <!-- Add more order items as needed -->
+      </div>
+      <button class="tab-button" onclick="openTab('wishlist')">Wishlist</button>
+      <div class="tab-content wishlist">
+        <h3 id="wishlistToggle">Wishlist</h3>
+        <div class="wishlist-item">
+          <span>Product ABC</span>
+          <span>$59.99</span>
+        </div>
+        <div class="wishlist-item">
+          <span>Product XYZ</span>
+          <span>$79.99</span>
+        </div>
+        <!-- Add more wishlist items as needed -->
+      </div>
+      <button class="tab-button" onclick="openTab('addressBook')">Address Book</button>
+      <div class="tab-content address-book">
+        <h3 id="addressBookToggle" onclick="toggleAddressBook()">Address Book</h3>
+        <div class="address-item" id="addressBookContent" style="display: none;">
+          <p>Home Address</p>
+          <p>123 Main St, Cityville, Country</p>
+        </div>
+        <!-- Add more address items as needed -->
+      </div>
+      <button class="tab-button" onclick="openTab('changePassword')">Change Password</button>
+      <div class="tab-content change-password">
+        <h3 id="changePasswordToggle" onclick="toggleChangePassword()">Change Password</h3>
+        <div class="change-password-content" style="display: none;">
+          <form>
+            <!-- Include change password form elements here -->
+            <label for="newPassword">New Password:</label>
+            <input type="password" id="newPassword" name="newPassword">
+            <br>
+            <label for="confirmPassword">Confirm Password:</label>
+            <input type="password" id="confirmPassword" name="confirmPassword">
+            <br>
+            <button type="submit" class="edit-profile-btn">Change Password</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="settings">
+      <button class="edit-profile-btn">Edit Profile</button>
+    </div>
+  </div>
+
+  <script>
+    function openTab(tabName) {
+      const allTabs = document.querySelectorAll('.tab-content');
+      allTabs.forEach(tab => tab.classList.remove('active-tab'));
+
+      const activeTab = document.querySelector(`.${tabName}`);
+      activeTab.classList.add('active-tab');
+    }
+
+    function toggleAddressBook() {
+      const addressBookContent = document.getElementById('addressBookContent');
+      addressBookContent.style.display = addressBookContent.style.display === 'none' ? 'block' : 'none';
+    }
+
+    function toggleChangePassword() {
+      const changePasswordContent = document.querySelector('.change-password-content');
+      changePasswordContent.style.display = changePasswordContent.style.display === 'none' ? 'block' : 'none';
+    }
+  </script>
+
+</body>
+</html>

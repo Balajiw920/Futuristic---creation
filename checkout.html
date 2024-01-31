@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <style>
+        body {
+            background-color: #000000;
+            color: #5c5b5b;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            margin-top: 20px;
+            margin-bottom: 50px;
+            padding: 20px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            background-color: #ffffff;
+        }
+
+        .checkout-section {
+            margin-bottom: 30px;
+        }
+
+        .progress-indicator {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .progress-bar {
+            flex-grow: 1;
+            height: 10px;
+            background-color: #17a2b8; 
+            border-radius: 5px;
+        }
+
+        .progress-step {
+            width: 20%;
+            text-align: center;
+            position: relative;
+            font-size: 14px;
+            color: #6c757d; 
+        }
+
+        .progress-circle {
+            width: 20px;
+            height: 20px;
+            background-color: #17a2b8; 
+            color: #ffffff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            top: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 12px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            font-weight: bold;
+            color: #007bff; 
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ced4da;
+        }
+
+        .checkout-button {
+            background-color: #28a745; 
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease; 
+        }
+
+        .checkout-button:hover {
+            background-color: #218838; 
+        }
+
+        .continue-shopping-link {
+            margin-top: 10px;
+            display: inline-block;
+            color: #ffffff; 
+        }
+
+        .continue-shopping-link:hover {
+            color: #007bff; 
+        }
+
+        .error-message {
+            color: #dc3545;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+
+        
+        @media (max-width: 768px) {
+            .progress-indicator {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .progress-bar {
+                margin-top: 15px;
+            }
+
+            .progress-step {
+                margin-top: 10px;
+            }
+        }
+
+        .payment-fields {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        
+        <div class="progress-indicator">
+            <div class="progress-step">
+                <div class="progress-circle">1</div>
+                Shipping
+            </div>
+            <div class="progress-bar"></div>
+            <div class="progress-step">
+                <div class="progress-circle">2</div>
+                Billing
+            </div>
+            <div class="progress-bar"></div>
+            <div class="progress-step">
+                <div class="progress-circle">3</div>
+                Review
+            </div>
+            <div class="progress-bar"></div>
+            <div class="progress-step">
+                <div class="progress-circle">4</div>
+                Confirm
+            </div>
+        </div>
+
+        <!-- Shipping Information Section -->
+        <div class="checkout-section">
+            <h2>Shipping Information</h2>
+            <form id="shippingForm">
+                <div class="form-group">
+                    <label for="fullName">Full Name:</label>
+                    <input type="text" id="fullName" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="address">Address:</label>
+                    <input type="text" id="address" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="contactNumber">Contact Number:</label>
+                    <input type="tel" id="contactNumber" class="form-control" required>
+                </div>
+            </form>
+        </div>
+
+
+
+
+        <!-- Billing Information Section -->
+<div class="checkout-section">
+    <h2>Billing Information</h2>
+    <form id="billingForm">
+        <div class="form-group">
+            <label for="paymentMethod">Payment Method:</label>
+            <div class="form-check">
+                <input type="radio" class="form-check-input" id="creditCard" name="paymentMethod" value="creditCard" required>
+                <label class="form-check-label" for="creditCard">Credit Card</label>
+            </div>
+            <div class="form-check">
+                <input type="radio" class="form-check-input" id="paypal" name="paymentMethod" value="paypal" required>
+                <label class="form-check-label" for="paypal">Paytm</label>
+            </div>
+            <div class="form-check">
+                <input type="radio" class="form-check-input" id="other" name="paymentMethod" value="other" required>
+                <label class="form-check-label" for="other">Other</label>
+            </div>
+        </div>
+
+        <!-- Credit Card Fields -->
+        <div id="creditCardFields" class="payment-fields">
+            <div class="form-group">
+                <label for="creditCardNumber">Credit Card Number:</label>
+                <input type="number" class="form-control" id="creditCardNumber" name="creditCardNumber" required>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="expiryDate">Expiry Date:</label>
+                    <input type="number" class="form-control" id="expiryDate" name="expiryDate" placeholder="MM/YY" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="cvv">CVV:</label>
+                    <input type="number" class="form-control" id="cvv" name="cvv" required>
+                </div>
+            </div>
+        </div>
+
+        
+
+        
+        <button type="submit" class="btn btn-primary">Complete Purchase</button>
+    </form>
+</div>
+
+
+
+        <!-- Order Review Section -->
+        <div class="checkout-section">
+            <h2>Order Review</h2>
+        
+            <div class="summary-section">
+                <div class="summary-item">
+                    Product Name 1 - Quantity: 2 - Price: $20.00
+                </div>
+                <div class="summary-item">
+                    Product Name 2 - Quantity: 1 - Price: $15.00
+                </div>
+                
+                <div class="summary-item">
+                    Subtotal: $55.00
+                </div>
+                <div class="summary-item">
+                    Shipping: $5.00
+                </div>
+                <div class="summary-item">
+                    <strong>Total: $60.00</strong>
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="checkout-section">
+            <h2>Terms and Conditions</h2>
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="agreeTerms" required>
+                <label class="form-check-label" for="agreeTerms">I agree to the <a href="#">Terms and Conditions</a>.</label>
+            </div>
+        </div>
+
+        
+            <button class="btn btn-primary checkout-button" onclick="validateCheckout()">Validate Info</button>
+            
+            <a href="confirm.html" class="btn btn-secondary continue-shopping-link">Confirm Order</a>
+
+        
+        <div id="errorMessage" class="error-message"></div>
+
+    </div>
+
+    <!-- Bootstrap JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.8/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+
+        document.addEventListener("DOMContentLoaded", function () {
+            
+            var paymentMethodRadios = document.querySelectorAll('input[name="paymentMethod"]');
+            paymentMethodRadios.forEach(function (radio) {
+                radio.addEventListener('change', function () {
+                    showHidePaymentFields(radio.value);
+                });
+            });
+    
+            function showHidePaymentFields(selectedPaymentMethod) {
+            
+            var paymentFields = document.querySelectorAll('.payment-fields');
+            paymentFields.forEach(function (field) {
+                field.style.display = 'none';
+            });
+    
+            
+            var selectedPaymentFields = document.getElementById(selectedPaymentMethod + 'Fields');
+            if (selectedPaymentFields) {
+                selectedPaymentFields.style.display = 'block';
+            }
+        }
+        function validateCheckout() {
+            
+            const fullName = document.getElementById('fullName').value.trim();
+            const address = document.getElementById('address').value.trim();
+            const contactNumber = document.getElementById('contactNumber').value.trim();
+        
+            
+            const creditCard = document.getElementById('creditCard').checked;
+            const paypal = document.getElementById('paypal').checked;
+            const other = document.getElementById('other').checked;
+        
+            const creditCardNumber = document.getElementById('creditCardNumber').value.trim();
+            const expiryDate = document.getElementById('expiryDate').value.trim();
+            const cvv = document.getElementById('cvv').value.trim();
+            const agreeTerms = document.getElementById('agreeTerms').checked;
+        
+            
+            if (!fullName || !address || !contactNumber || (!creditCard && !paypal && !other) || 
+                ((creditCard && (!creditCardNumber || !expiryDate || !cvv)) ||
+                 (paypal && ) ||
+                 (other && )) || !agreeTerms) {
+                document.getElementById('errorMessage').innerText = 'All fields are required.';
+            } else {
+                
+                alert('Checkout successful!');
+        
+                
+                window.location.href = 'confirm.html';
+        
+                
+                document.getElementById('errorMessage').innerText = '';
+            }
+        }
+                
+        
+    });
+    </script>
+</body>
+</html>

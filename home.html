@@ -1,0 +1,1432 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Futuristic Website</title>
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <!-- Font Awesome for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    
+    <style>
+
+      *{
+        scroll-behavior: smooth;
+       }
+      body {
+        background-color: #070707;
+        color: white;
+      }
+
+      /* NavBar Sections ENds */
+
+      .navbar {
+        padding: 20px 0px 20px 0px;
+        background: linear-gradient(
+          45deg,
+          #800080,
+          #4b0082
+        ); 
+        border-bottom: 3px solid #9400d3; 
+      }
+
+      .navbar-brand img {
+        max-height: 60px;
+        margin-left: -80px;
+      }
+
+      .navbar-nav .nav-link {
+        color: #ffffff;
+        font-weight: bold;
+        padding: 0.5rem 1rem;
+        transition: color 0.3s ease;       }
+
+      .navbar-nav .nav-link:hover {
+        color: #9400d3;
+        transition: color 0.3s ease; 
+      }
+
+      .search-bar {
+        width: 250px;
+        border: none;
+        border-radius: 20px;
+        padding: 10px;
+        background: linear-gradient(
+          45deg,
+          #4b0082,
+          #800080
+        ); 
+        color: #ffffff;
+        transition: background 0.3s ease, color 0.3s ease; 
+      }
+
+      .search-bar:focus {
+        outline: none;
+      }
+
+      .search-bar::placeholder {
+        color: #bdbdbd; 
+      }
+
+      .cart-section a {
+        color: #ffffff;
+        transition: color 0.3s ease; 
+      }
+
+      .cart-section a:hover {
+        color: #9400d3;
+        transition: color 0.3s ease; 
+      }
+
+      .user-profile-dropdown {
+        cursor: pointer;
+        transition: color 0.3s ease; 
+      }
+
+      .user-profile-dropdown:hover {
+        color: #9400d3;
+        transition: color 0.3s ease; 
+      }
+
+      .dropdown-menu {
+        border: none;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        animation: fadeInDown 0.3s ease; 
+      }
+
+      .dropdown-item {
+        color: #9400d3;
+        transition: color 0.3s ease; 
+      }
+
+      .dropdown-item:hover {
+        background-color: #ffffff;
+        color: #9400d3;
+        transition: background-color 0.3s ease, color 0.3s ease; 
+      }
+
+      @keyframes  {
+        from {
+          opacity: 0;
+          transform: translateY(-10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* NavBar Sections ENds */
+
+      
+
+
+
+      /* Hero Section Starts */
+
+      .hero-section {
+        margin-top: 20px;
+        border: 0px 0px 2px 0px solid #333;
+        border-radius: 10px; 
+        overflow: hidden; 
+        color: #e74c3c;
+      }
+      
+      /* Hero Section ENds */
+
+
+
+
+      /* Style for the NEW tag */
+
+      .new-tag {
+        background-color: #ff5722; 
+        color: #fff;
+        padding: 5px 10px;
+        border-radius: 5px;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-weight: bold;
+        font-size: 12px;
+        opacity: 0; 
+        transform: scale(0); 
+        transform-origin: top right;
+        animation: popup 0.3s ease-out infinite; 
+      }
+
+      .product-card {
+        position: relative;
+        overflow: hidden;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        transition: transform 0.3s ease-out;
+      }
+
+      .product-card:hover {
+        transform: scale(1.05);
+      }
+
+      .img-fluid {
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px 10px 0 0;
+      }
+
+      .product-details {
+        padding: 15px;
+      }
+
+      .product-title {
+        font-size: 18px;
+        margin-bottom: 10px;
+      }
+
+      .product-description {
+        color: #555;
+      }
+
+      .btn-primary {
+        background-color: #4caf50; 
+        border: none;
+      }
+
+      .btn-primary:hover {
+        background-color: #45a049;
+      }
+
+      @keyframes  {
+        0%,
+        100% {
+          opacity: 0;
+          transform: scale(0);
+        }
+        50% {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+      /* Style for the NEW tag Ends */
+
+
+
+      /* Deals and Offers Starts */
+    
+    .deal-card {
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid #ddd; 
+      transition: transform 0.3s; 
+    }
+
+    .deal-card:hover {
+      transform: scale(1.05); 
+    }
+
+    .deal-card img {
+      object-fit: cover;
+      height: 200px; 
+      width: 100%;
+      transition: opacity 0.3s; 
+    }
+
+    .deal-card:hover img {
+      opacity: 0.7;     }
+
+    .discount-tag {
+        position: absolute;
+        top: 10px;
+      right: 10px;
+      background-color: #ff0000; 
+      color: #ffffff; 
+      padding: 5px 10px;
+      border-radius: 5px;
+      font-size: 14px;
+      font-weight: bold;
+      transition: background-color 0.3s; 
+    }
+
+    .deal-card:hover .discount-tag {
+        background-color: #990000; 
+    }
+    /* Deals and Offers Ends */
+
+
+
+      .carousel-inner {
+        background-color: #fff; 
+      }
+
+      .card {
+        width: 100%;
+        height: 200px; 
+        overflow: hidden;
+        background-color: #fff; 
+      }
+
+      .card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; 
+      }
+
+      .social-icons li {
+        display: inline-block;
+        margin-right: 10px;
+      }
+
+      .subscribe-form input,
+      .subscribe-form button {
+        border-radius: 0;
+      }
+
+      .footer-nav a {
+        text-decoration: none;
+        padding: 8px 16px;
+        border-radius: 5px;
+        transition: color 0.3s;
+      }
+
+      .footer-nav a:hover {
+        color: #ecf0f1;
+      }
+
+      .carousel-container {
+        height: auto;
+        overflow: hidden;
+      }
+
+      .item {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        color: #333;
+        margin: 20px; 
+        background-color: #fff;
+        border-radius: 15px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .review-form-container {
+        max-width: 400px;
+        margin: 30px auto;
+        padding: 20px;
+        background-color: #34c3eb;
+        border-radius: 15px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        display: none; 
+        color: #fff;
+      }
+
+      .form-group {
+        margin-bottom: 20px;
+      }
+
+      label {
+        font-weight: bold;
+        color: #fff;
+      }
+
+      textarea {
+        resize: none;
+      }
+
+      .rating-container {
+        text-align: center;
+      }
+
+      .rating-stars i {
+        color: #ffc107; 
+        font-size: 24px;
+        margin: 0 5px;
+      }
+
+      .review-author {
+        text-align: center;
+        margin-top: 10px;
+      }
+
+      .review-author p {
+        margin: 0;
+        font-weight: bold;
+      }
+
+      .owl-dots {
+        position: absolute;
+        bottom: 20px;
+        width: 100%;
+        text-align: center;
+      }
+
+      .owl-dot {
+        display: inline-block;
+        width: 12px;
+        height: 12px;
+        margin: 0 5px;
+        background-color: #ddd;
+        border-radius: 50%;
+        cursor: pointer;
+      }
+
+      .owl-dot.active {
+        background-color: #fff;
+      }
+
+      .toggle-form-btn {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .toggle-form-btn:hover {
+        background-color: #0056b3;
+      }
+
+      /* Responsive Styles */
+      @media (max-width: 576px) {
+        .carousel-container {
+          height: auto;
+        }
+
+        .review-form-container {
+          max-width: 90%;
+        }
+      }
+
+      /* Features Section styling Starts*/
+
+      #feature {
+        background: linear-gradient(
+          45deg,
+          #0a0c0f,
+          #141b14
+        ); 
+        color: #fff;
+        padding: 80px 0; 
+        position: relative; 
+        overflow: hidden; 
+      }
+
+      
+      #feature::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url("path-to-your-pattern-image.png"); 
+        opacity: 0.1; 
+      }
+
+      #feature .container {
+        text-align: center;
+      }
+
+      #feature .section_title h1 {
+        color: #ffd700; 
+      }
+
+      #feature .row {
+        display: flex;
+        justify-content: center;
+        align-items: stretch;
+      }
+
+      #feature .col-md-4 {
+        transition: transform 0.3s ease;
+        position: relative; 
+        overflow: hidden; 
+      }
+
+      #feature .col-md-4:hover {
+        transform: translateY(-10px); 
+      }
+
+      #feature .shadow {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+      }
+
+      #feature i {
+        color: #ffd700; 
+        position: relative;
+        z-index: 1;
+      }
+
+      #feature h3 {
+        color: #ffd700; 
+      }
+
+      #feature p {
+        font-size: 16px;
+        line-height: 1.6;
+        color: #ccc; 
+      }
+
+      
+      #feature .col-md-4::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          45deg,
+          rgba(255, 218, 185, 0.3) 0%,
+         rgba(241, 238, 235, 0.1) 50%,
+          rgba(255, 218, 185, 0.3) 100%
+        );
+        z-index: 0;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      #feature .col-md-4:hover::before {
+        opacity: 1;
+      }
+
+      
+      @keyframes  {
+        0% {
+          transform: translateX(-200%);
+        }
+        100% {
+          transform: translateX(200%);
+        }
+      }
+
+      #feature i::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -200%;
+        width: 200%;
+        height: 100%;
+        background: rgb(244, 241, 241);
+        transform: skewX(-45deg);
+        z-index: 0;
+        animation: shine 1s linear infinite; 
+      }
+      
+      /* Features Section styling Ends */
+
+
+
+
+      /* Back to top button */
+  .backtop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 999;
+  }
+  
+  #button {
+    background-color: #dc3545; /* Set button background color */
+    color: #fff; /* Set button text color */
+    border: none;
+  }
+  
+  #button:hover {
+    background-color: #c82333; /* Change button background color on hover */
+  }
+    </style>
+  </head>
+  <body id="top">
+    <!-- Header Section Starts-->
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+        
+          <a class="navbar-brand" href="home.html">
+            <img src="/images/Waghmare logo Png [Black].png" alt="Your Logo" />
+          </a>
+
+          
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="home.html"
+                  >Home <span class="sr-only">(current)</span></a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="Product.html">Products</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="Categorie.html">Categories</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="Aboutus.html">About Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="Contactus.html">Contact Us</a>
+              </li>
+            </ul>
+
+            
+            <form class="form-inline my-2 my-lg-0 mr-3">
+              <input
+                class="form-control search-bar"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+              <button class="btn btn-outline-light my-2 my-sm-0" type="submit">
+                Search
+              </button>
+            </form>
+
+            
+            <div class="cart-section mr-3">
+              <a href="cart.html" class="text-light">
+                <i class="fas fa-shopping-cart fa-lg"></i>
+                <span class="cart-counter">0</span>
+              </a>
+            </div>
+
+            
+            <div class="dropdown">
+              <div
+                class="user-profile-dropdown"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                <i class="fas fa-user-circle fa-lg text-light"></i>
+              </div>
+              <div class="dropdown-menu dropdown-menu-right">
+                <a class="dropdown-item" href="Profile.html">Profile</a>
+                <a class="dropdown-item" href="#">Orders</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Logout</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Header Section Ends-->
+
+
+
+    <!-- Hero/Featured Section -->
+    <section
+      class="hero-section"
+      style="
+        border: 2px solid #3a2828;
+        border-radius: 10px;
+        overflow: hidden;
+        colour: black;
+      "
+    >
+      <div class="container">
+        <div id="heroCarousel" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="row align-items-center">
+                <div class="col-lg-6">
+                  <h1 class="hero-title">Discover the Latest Products</h1>
+                  <p class="hero-subtitle">
+                    Explore our collection of Latest products Added just for
+                    you.
+                  </p>
+                  <a href="/product1" class="btn btn-primary btn-lg"
+                    >Shop Now</a
+                  >
+                </div>
+                <div class="col-lg-6">
+                  <img
+                    src="/images/beauty-4993472.jpg"
+                    alt="Hero Image"
+                    class="img-fluid"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="carousel-item">
+              <div class="row align-items-center">
+                <div class="col-lg-6">
+                  <!-- Product 2 details -->
+                  <h1 class="hero-title">Canon 5D</h1>
+                  <p class="hero-subtitle">
+                    Explore our New capturing Product .
+                  </p>
+                  <a href="Detailsproduct.html" class="btn btn-primary btn-lg">Shop Now</a>
+                </div>
+                <div class="col-lg-6">
+                  <img
+                    src="/images/camera.jpg"
+                    alt="Product 2 Image"
+                    class="img-fluid"
+                  />
+                </div>
+              </div>
+            </div>
+            <!-- Add more carousel items as needed -->
+          </div>
+          <a
+            class="carousel-control-prev"
+            href="#heroCarousel"
+            role="button"
+            data-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a
+            class="carousel-control-next"
+            href="#heroCarousel"
+            role="button"
+            data-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Hero/Featured Section Ends-->
+
+
+
+
+    <!-- Product Showcase Section Starts -->
+    <section class="product-showcase-section py-5">
+      <div class="container">
+        <div class="section-title text-center mb-5">
+          <h2 class="text-uppercase">Featured Products</h2>
+          <p class="text-muted">
+            Explore our curated collection of must-have items.
+          </p>
+        </div>
+
+        <div class="row">
+
+          <!-- Product 1 -->
+
+          <div class="col-md-4">
+            <div class="product-card">
+              <span class="new-tag">NEW</span>
+              <img
+                src="/images/belt (3).jpg"
+                alt="Product 1"
+                class="img-fluid"
+              />
+              <div class="product-details">
+                <h3 class="product-title">Stylish Belt</h3>
+                <p class="product-description">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                </p>
+                <a href="#" class="btn btn-primary">View Details</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 2 -->
+          <div class="col-md-4">
+            <div class="product-card">
+              <span class="new-tag">NEW</span>
+              <img
+                src="/images/a-book.jpg"
+                alt="Product 2"
+                class="img-fluid"
+              />
+              <div class="product-details">
+                <h3 class="product-title">New Arrival Book</h3>
+                <p class="product-description">
+                  Sed do eiusmod tempor incididunt ut labore et dolore magna
+                  aliqua.
+                </p>
+                <a href="#" class="btn btn-primary">View Details</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 3 -->
+          <div class="col-md-4">
+            <div class="product-card">
+              <span class="new-tag">NEW</span>
+              <img
+                src="/images/sunglasses.jpg"
+                alt="Product 3"
+                class="img-fluid"
+              />
+              <div class="product-details">
+                <h3 class="product-title">Fashionable Sunglasses</h3>
+                <p class="product-description">
+                  Sed do eiusmod tempor incididunt ut labore et dolore magna
+                  aliqua.
+                </p>
+                <a href="#" class="btn btn-primary">View Details</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 4 -->
+          <div class="col-md-4">
+            <div class="product-card">
+              <span class="new-tag">NEW</span>
+              <img
+                src="/images/wrist-watch-1.jpg"
+                alt="Product 4"
+                class="img-fluid"
+              />
+              <div class="product-details">
+                <h3 class="product-title"> Metallic wrist-watch</h3>
+                <p class="product-description">
+                  Sed do eiusmod tempor incididunt ut labore et dolore magna
+                  aliqua.
+                </p>
+                <a href="#" class="btn btn-primary">View Details</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 5 -->
+          <div class="col-md-4">
+            <div class="product-card">
+              <span class="new-tag">NEW</span>
+              <img
+                src="/images/wallet-494169_1920.jpg"
+                alt="Product 5"
+                class="img-fluid"
+              />
+              <div class="product-details">
+                <h3 class="product-title">Crafted Wallet</h3>
+                <p class="product-description">
+                  Sed do eiusmod tempor incididunt ut labore et dolore magna
+                  aliqua.
+                </p>
+                <a href="#" class="btn btn-primary">View Details</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 6 -->
+          <div class="col-md-4">
+            <div class="product-card">
+              <span class="new-tag">NEW</span>
+              <img
+                src="/images/tent.jpg"
+                alt="Product 6"
+                class="img-fluid"
+                />
+                <div class="product-details">
+                  <h3 class="product-title">Hard Polyster tent</h3>
+                  <p class="product-description">
+                    Sed do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua.
+                  </p>
+                  <a href="Detailsproduct.html" class="btn btn-primary">View Details</a>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Add more products as needed -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Product Showcase Section Ends -->
+
+
+
+      
+    <!-- Shop by Category start -->
+    <section>
+      <div class="section-title text-center mb-5">
+        <a href="Categorie.html">
+          <h2 class="text-uppercase">Shop By Category</h2>
+        </a>
+        <div id="categoryCarousel" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="card">
+                    <img
+                      src="/images/belt (2).jpg"
+                      class="card-img-top"
+                      alt="Category 1 Image"
+                    />
+                    <div class="card-caption">
+                      <h5 class="card-title">Category 1</h5>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card">
+                    <img
+                      src="/images/wallet-8092391_1280.png"
+                      class="card-img-top"
+                      alt="Category 2 Image"
+                    />
+                    <div class="card-caption">
+                      <h5 class="card-title">Category 2</h5>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card">
+                    <img
+                      src="/images/belt.jpg"
+                      class="card-img-top"
+                      alt="Category 3 Image"
+                    />
+                    <div class="card-caption">
+                      <h5 class="card-title">Category 3</h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Additional Carousel Items -->
+            <div class="carousel-item">
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="card">
+                    <img
+                      src="/images/fashion-trends-3371138.jpg"
+                      class="card-img-top"
+                      alt="Category 4 Image"
+                    />
+                    <div class="card-caption">
+                      <h5 class="card-title">Category 4</h5>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card">
+                    <img
+                      src="/images/hoodies.jpg"
+                      class="card-img-top"
+                      alt="Category 5 Image"
+                    />
+                    <div class="card-caption">
+                      <h5 class="card-title">Category 5</h5>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card">
+                    <img
+                      src="/images/Black-Shoe.jpg"
+                      class="card-img-top"
+                      alt="Category 6 Image"
+                    />
+                    <div class="card-caption">
+                      <h5 class="card-title">Category 6</h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Add more carousel items as needed -->
+          </div>
+
+          <a
+            class="carousel-control-prev"
+            href="#categoryCarousel"
+            role="button"
+            data-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a
+            class="carousel-control-next"
+            href="#categoryCarousel"
+            role="button"
+            data-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Shop by Category End -->
+
+    
+
+    <!--Deals and Offers Starts -->
+<section class="container py-5">
+  <div class="section-title text-center mb-4">
+  <h2 class="text-uppercase">Deals and Offers</h2>
+  <p class="text-muted">Check out our latest discounts and special offers</p>
+</div>
+
+<div class="row">
+  <div class="col-md-4 mb-4">
+    <div class="card deal-card">
+      <a href="#">
+        <img src="/images/belt-952834.jpg" class="card-img-top" alt="Deal 1">
+        <span class="discount-tag">50% OFF</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="col-md-4 mb-4">
+    <div class="card deal-card">
+      <a href="#">
+        <img src="/images/belt (3).jpg" class="card-img-top" alt="Deal 2">
+        <span class="discount-tag">Flash Sale</span>
+      </a>
+  </div>
+  </div>
+  
+  <div class="col-md-4 mb-4">
+      <div class="card deal-card">
+          <a href="#">
+              <img src="/images/babe.jpg" class="card-img-top" alt="Deal 3">
+        <span class="discount-tag">BOGO</span>
+      </a>
+  </div>
+</div>
+
+<!-- Add more deals as needed -->
+</div>
+</section>
+
+<!--Deals and Offers Ends -->
+
+
+    <!-- ==============feature starts here============== -->
+    <section class="feature py-5 mt-5" id="feature">
+      <div class="container">
+        <div class="section_title text-center mb-5">
+          <h1 class="text-capitalize">Our Features</h1>
+        </div>
+        <div class="row text-white">
+          <div class="col-md-4 col-12 shadow p-3">
+            <div class="text-center">
+              <div class="mb-4">
+                <i class="fas fa-shipping-fast fa-3x mb-3 pt-2"></i>
+                <div>
+                  <h3>Easy Return</h3>
+                </div>
+              </div>
+              <div>
+                Not happy? If you need to return a product or have it replaced,
+                you can do so immediately no matter where you are. If you
+                suddenly realize you need to cancel an order but are nowhere
+                near a computer or don’t have the time to log on online, you can
+                do so through the app and have your request processed
+                immediately. Yup, that’s one more thing you don’t have to worry
+                about.
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-12 shadow p-3 mt-small-5 mb-small-5">
+            <div class="text-center">
+              <div class="mb-4">
+                <i class="fas fa-lock fa-3x mb-3 pt-2"></i>
+                <div>
+                  <h3>Pay Easy</h3>
+                </div>
+              </div>
+              <div>
+                Paying for your online purchases has never been this easy. You
+                can choose the effortless cash-on-delivery option or save your
+                payment information on the app and instantly receive
+                confirmation emails and messages on the same device. This goes a
+                long way, as you’re not scrambling through multiple devices to
+                keep track of your purchase and nor do you have to spend
+                inordinate amounts of time digging out your debit or credit card
+                from your wallet or remembering your net banking id. Whew!
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-12 shadow p-3">
+            <div class="text-center">
+              <div class="mb-4">
+                <i class="fas fa-headphones fa-3x mb-3 pt-2"></i>
+                <div>
+                  <h3>24/7 Support</h3>
+                </div>
+              </div>
+              <div>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Dignissimos impedit id accusamus quas maxime expedita nostrum
+                atque delectus deleniti ad modi repellat debitis ipsam quisquam
+                amet, odit voluptate recusandae distinctio? Perferendis tenetur
+                quibusdam porro dolor dignissimos id magnam debitis vitae?
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Customer Review Slider -->
+    <div>
+      <div
+        class="owl-carousel owl-theme carousel-container"
+        id="customer-review-carousel"
+      >
+        <!-- Review 1 -->
+        <div class="item">
+          <div class="review-text">
+            <p>
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            </p>
+          </div>
+          <div class="rating-container">
+            <div class="rating-stars">
+              <i class="fas fa-star"></i> <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i> <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+            </div>
+          </div>
+          <div class="review-author">
+            <p>John Doe</p>
+          </div>
+        </div>
+
+        <!-- Review 2 -->
+        <div class="item">
+          <div class="review-text">
+            <p>
+              "Ut enim ad minim veniam, quis nostrud exercitation ullamco
+              laboris nisi ut aliquip ex ea commodo consequat."
+            </p>
+          </div>
+          <div class="rating-container">
+            <div class="rating-stars">
+              <i class="fas fa-star"></i> <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i> <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+          <div class="review-author">
+            <p>Jane Smith</p>
+          </div>
+        </div>
+
+        <!-- Review 3 -->
+        <div class="item">
+          <div class="review-text">
+            <p>
+              "Duis aute irure dolor in reprehenderit in voluptate velit esse
+              cillum dolore eu fugiat nulla pariatur."
+            </p>
+          </div>
+          <div class="rating-container">
+            <div class="rating-stars">
+              <i class="fas fa-star"></i> <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i> <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+            </div>
+          </div>
+          <div class="review-author">
+            <p>Lisa Johnson</p>
+          </div>
+        </div>
+
+        <!-- Review 4 -->
+      </div>
+      <div class="item">
+        <div class="review-text">
+          <p>
+            "Vivamus gravida, ipsum ut lacinia luctus, felis orci vestibulum
+            libero, id eleifend orci arcu vitae nisi."
+          </p>
+        </div>
+        <div class="rating-container">
+          <div class="rating-stars">
+            <i class="fas fa-star"></i> <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i> <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+          </div>
+        </div>
+        <div class="review-author">
+          <p>David Anderson</p>
+        </div>
+      </div>
+
+      
+    </div>
+
+
+
+    <!-- Modern Footer Section -->
+    <footer
+      class="footer-section py-5"
+      style="background-color: #2c3e50; color: #ecf0f1"
+    >
+      <div class="container">
+        <div class="row">
+          <!-- Contact Information -->
+          <div class="col-md-4 mb-4">
+            <h5>Contact Information</h5>
+            <p>Email: info@example.com</p>
+            <p>Phone: +1 123 456 7890</p>
+            <p>Address: 123 Karve Nagar, Pune</p>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="col-md-4 mb-4">
+            <h5>Quick Links</h5>
+            <ul class="list-unstyled">
+              <li><a href="Aboutus.html" style="color: #f39c12">About Us</a></li>
+              <li><a href="#" style="color: #f39c12">Privacy Policy</a></li>
+              <li><a href="#" style="color: #f39c12">Terms of Service</a></li>
+              <li><a href="#" style="color: #f39c12">FAQ</a></li>
+            </ul>
+          </div>
+
+          <!-- Social Media Links -->
+          <div class="col-md-4 mb-4">
+            <h5>Stay Connected</h5>
+            <ul class="list-unstyled social-icons">
+              <li>
+                <a href="#" target="_blank" style="color: #e74c3c"
+                  ><i class="fab fa-facebook-f"></i
+                ></a>
+              </li>
+              <li>
+                <a href="#" target="_blank" style="color: #3498db"
+                  ><i class="fab fa-twitter"></i
+                ></a>
+              </li>
+              <li>
+                <a href="#" target="_blank" style="color: #27ae60"
+                  ><i class="fab fa-instagram"></i
+                ></a>
+              </li>
+              <li>
+                <a href="#" target="_blank" style="color: #1d80e3"
+                  ><i class="fab fa-linkedin-in"></i
+                ></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Newsletter Subscription -->
+        <div class="row mt-4">
+          <div class="col-md-6 offset-md-3 text-center">
+            <h5 style="color: #f39c12">Subscribe to Our Website</h5>
+            <form class="subscribe-form">
+              <div class="input-group mb-3">
+                <input
+                  type="email"
+                  class="form-control"
+                  placeholder="Enter your email"
+                  aria-label="Subscribe"
+                  aria-describedby="button-addon2"
+                />
+                <div class="input-group-append">
+                  <button
+                    class="btn btn-warning"
+                    type="button"
+                    id="button-addon2"
+                  >
+                    Subscribe
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- Footer Navigation -->
+        <div class="row mt-4">
+          <div class="col-md-12 text-center">
+            <ul class="list-inline footer-nav">
+              <li class="list-inline-item">
+                <a href="home.html" style="color: #f39c12">Home</a>
+              </li>
+              <li class="list-inline-item">
+                <a href="Product.html" style="color: #f39c12">Products</a>
+              </li>
+              <li class="list-inline-item">
+                <a href="Categorie.html" style="color: #f39c12">Categories</a>
+              </li>
+              <li class="list-inline-item">
+                <a href="Aboutus.html" style="color: #f39c12">About Us</a>
+              </li>
+              <li class="list-inline-item">
+                <a href="Contactus.html" style="color: #f39c12">Contact Us</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+
+    
+    <!--Back to Top BUtton Starts-->
+    <div class="backtop">
+      <a
+      id="button"
+      href="#top"
+      class="btn btn-lg btn-outline-danger"
+      role="button"
+      >
+      <i class="fas fa-chevron-up text-dark"></i>
+    </a>
+  </div>
+
+  <!--Back to Top BUtton Ends-->
+
+    <script>
+      $(document).ready(function () {
+        
+        $("#customer-review-carousel").owlCarousel({
+          items: 1,
+          loop: true,
+          margin: 10,
+          autoplay: true,
+          autoplayTimeout: 5000,
+          autoplayHoverPause: false,
+          animateOut: "fadeOutUp",
+          animateIn: "fadeInUp",
+          dots: true,
+          nav: false,
+        });
+
+        
+        $("#rating")
+          .rateYo({
+            rating: 4, 
+            starWidth: "30px",
+            fullStar: true,
+          })
+          .on("rateyo.set", function (e, data) {
+            
+            $("#rating-input").val(data.rating);
+          });
+
+        
+        $("#toggle-form-btn").click(function () {
+          $("#review-form-container").slideToggle();
+        });
+
+        
+        $("#review-form").submit(function (event) {
+          event.preventDefault();
+          var reviewText = $("#reviewText").val();
+          var rating = $("#rating-input").val();
+          var reviewAuthor = $("#reviewAuthor").val();
+
+          
+          $("#customer-review-carousel").trigger("add.owl.carousel", [
+            '<div class="item"><div class="review-text"><p>' +
+              reviewText +
+              '</p></div><div class="rating-container"><div class="rating-stars">' +
+              generateStarIcons(rating) +
+              '</div></div><div class="review-author"><p>' +
+              reviewAuthor +
+              "</p></div></div>",
+            0,
+          ]);
+          $("#customer-review-carousel").trigger("refresh.owl.carousel");
+
+          
+          $("#reviewText").val("");
+          $("#rating").rateYo("rating", 4); 
+          $("#reviewAuthor").val("");
+
+          
+          $("#review-form-container").slideUp();
+        });
+
+        
+        function generateStarIcons(rating) {
+          var stars = "";
+          var fullStars = Math.floor(rating);
+          var halfStar = rating % 1 !== 0;
+
+          for (var i = 0; i < fullStars; i++) {
+            stars += '<i class="fas fa-star"></i> ';
+          }
+
+          if (halfStar) {
+            stars += '<i class="fas fa-star-half-alt"></i> ';
+          }
+
+          return stars;
+        }
+      });
+
+      function addToCart() {
+        
+        alert("Product added to cart!");
+      }
+    </script>
+
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Font Awesome JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.5.4/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.js"></script>
+  </body>
+</html>
